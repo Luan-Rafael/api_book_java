@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@RequestMapping("/api/book")
+@RequestMapping
 public class BookFindController {
     private final BookFindService bookFindService;
 
@@ -27,11 +27,11 @@ public class BookFindController {
 
     }
 
-    @GetMapping("")
+    @GetMapping
     public ResponseEntity<ArrayList<Map<String, String>>> find() {
         try {
             ArrayList<Map<String, String>> data = new ArrayList<>();
-            data = this.bookFindService.find(); 
+            data = this.bookFindService.find();
             return ResponseEntity.ok(data);
 
         } catch (BookServiceException exception) {

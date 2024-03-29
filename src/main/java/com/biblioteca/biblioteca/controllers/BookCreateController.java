@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/api/book")
+@RequestMapping
 public class BookCreateController {
 
     private final BookCreateService bookCreateService;
@@ -24,7 +24,7 @@ public class BookCreateController {
         this.bookCreateService = bookService;
     }
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<String> bookCreate(@RequestBody BookRequest request) {
         try {
 

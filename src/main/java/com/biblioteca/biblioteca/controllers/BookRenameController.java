@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/api/book")
+@RequestMapping
 public class BookRenameController {
     private final BookRenameService bookRenameService;
 
@@ -23,7 +23,7 @@ public class BookRenameController {
         this.bookRenameService = bookRenameService;
     }
 
-    @PutMapping("/rename")
+    @PutMapping
     public ResponseEntity<String> rename(@RequestParam("id") int id, @RequestBody BookRequest request) {
         try {
             this.bookRenameService.rename(id, request.name(), request.location());
