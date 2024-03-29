@@ -19,8 +19,8 @@ public class BookRenameService implements BookRenameUseCase {
     }
 
     @Override
-    public Map<String, String> rename(int id, String name, String location) {
-        return this.bookRenameGateway.rename(id, name, location);
+    public void rename(int id, String name, String location) {
+        this.bookRenameGateway.rename(id, name, location);
     }
 
 }
